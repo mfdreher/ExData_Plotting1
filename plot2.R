@@ -12,7 +12,7 @@ datetime <- paste(x[[1]], x[[2]])
 datetime <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 
 #create new data frame with POSIXt datetime variable, exclude "date" and "time" variables from original dataset
-df <- data.frame(datetime, globalactive, x[ ,4:9])
+df <- data.frame(datetime, x[ ,3:9])
 
 #Create column names. Column names weren't included in table load as the file started at record 60,000
 colnames(df) <- c("datetime", "globalactive", "globalreactive", "voltage", "globalintensity", 
